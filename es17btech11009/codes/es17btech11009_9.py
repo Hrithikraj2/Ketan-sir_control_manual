@@ -1,0 +1,25 @@
+import control
+import matplotlib.pyplot as plt
+
+num = [0,0,0,0,1000]
+den = [1,18,119,342,1360]
+
+#Transfer function GH = num/den
+G = control.tf(num,den) 
+control.nichols_plot(G)
+plt.grid(True)
+plt.scatter(-180,0,s=40)
+plt.annotate("-180,0dB",(-180,0))
+plt.scatter(180,0,s=40)
+plt.annotate("(180,0dB)",(180,0))
+plt.title('Nichols Chart')
+plt.xlabel('Phase(deg) ')
+plt.ylabel('Gain(dB)')
+plt.show()
+
+#if using termux
+plt.savefig('./figs/es17btech11009_9.pdf')
+plt.savefig('./figs/es17btech11009_9.eps')
+subprocess.run(shlex.split("termux-open ./figs/es17btech11009_9.pdf"))
+#else
+#plt.show()

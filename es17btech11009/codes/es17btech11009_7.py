@@ -1,8 +1,8 @@
 import control
 import matplotlib.pyplot as plt
 
-num = [0,0,0,0,200]
-den = [1,16,86,176,105]
+num = [0,0,10,120,350]
+den = [1,16,86,176,115]
 
 #Transfer function GH = num/den
 G = control.tf(num,den) 
